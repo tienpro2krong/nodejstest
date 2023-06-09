@@ -1,18 +1,11 @@
 const express = require('express');
-
+const {getHomepage, getAbc, getTienPro} = require('../controllers/homeController');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send('Hello World! Tien okkk');
-})
+router.get('/', getHomepage);
 
-router.get('/abc', (req, res) => {
-    res.send('Check ABC');
-})
+router.get('/abc', getAbc);
 
-router.get('/tienpro', (req, res) => {
-    // res.send('<h1 style="color: blue">Tien Pro</h1>')
-    res.render('sample');
-})
+router.get('/tienpro', getTienPro);
 
 module.exports = router;
